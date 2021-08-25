@@ -11,7 +11,8 @@ programa
 		escreva("1. Calcular Fatorial\n")
 		escreva("2. Imprimir números naturais\n")
 		escreva("3. Imprimir números naturais versão Igor\n")
-		escreva("4. Registrar nomes\n")			
+		escreva("4. Registrar nomes\n")
+		escreva("5. Pesquisar registro\n")			
 		leia(opcao)
 
 		escolha(opcao){
@@ -33,6 +34,11 @@ programa
 				pare
 			caso 4:
 				registrarNomes()
+				pare
+			caso 5:
+				escreva("Digite a posição do vetor: \n")
+				leia(numero)				
+				pesquisarRegistro(numero)
 				pare
 			caso contrario:
 				escreva("Opção invalida")
@@ -84,15 +90,19 @@ programa
 			leia(nomes[indice])
 		}
 	}
+
+	funcao pesquisarRegistro(inteiro posicao){
+		escreva("O registro na posição ", posicao, " é : ", nomes[posicao])
+	}
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 855; 
+ * @POSICAO-CURSOR = 337; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {numero, 55, 47, 6}-{digito, 55, 63, 6};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
