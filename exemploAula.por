@@ -1,13 +1,17 @@
 programa
 {
+	inclua biblioteca Util
+	
 	inteiro contador = 0
+	cadeia nomes[5]
 	
 	funcao inicio()
 	{
 		inteiro opcao, numero, resultado
 		escreva("1. Calcular Fatorial\n")
 		escreva("2. Imprimir números naturais\n")
-		escreva("3. Imprimir números naturais versão Igor\n")		
+		escreva("3. Imprimir números naturais versão Igor\n")
+		escreva("4. Registrar nomes\n")			
 		leia(opcao)
 
 		escolha(opcao){
@@ -23,13 +27,20 @@ programa
 				escreva(imprimirNumerosNaturais(numero, 0))
 				pare
 			caso 3:
-				escreva("Digite um número: ")
+				escreva("Digite um nome: ")
 				leia(numero)
 				escreva(imprimirNumerosNaturaisIgor(numero))
 				pare
+			caso 4:
+				registrarNomes()
+				pare
 			caso contrario:
 				escreva("Opção invalida")
-		}
+		}		
+		
+		Util.aguarde(3000)
+		limpa()
+		inicio()
 		
 	}
 									
@@ -65,15 +76,23 @@ programa
 				
 		retorne naturais(numero - 1) + 1
 	}
+
+	funcao registrarNomes(){
+		escreva("#####Registro de Nomes######\n")
+		para(inteiro indice = 0; indice < Util.numero_elementos(nomes); indice++){
+			escreva("Nome ", indice + 1, ": ")
+			leia(nomes[indice])
+		}
+	}
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 643; 
+ * @POSICAO-CURSOR = 855; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {resultado, 7, 25, 9}-{numero, 36, 41, 6}-{numero, 61, 33, 6}-{textoNumeros, 53, 9, 12};
+ * @SIMBOLOS-INSPECIONADOS = {numero, 55, 47, 6}-{digito, 55, 63, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
